@@ -1,0 +1,123 @@
+:root {
+    --color-primary: #ff6e40;
+    --color-back-light: #ECEFF1;
+    --color-back-dark: #37474f;
+    --spacer-base: 1em;
+    --card-font-size: 80%;
+    --header-font-size: 36px;
+    --header-height: 6em;
+}
+body {
+    font-family:   Roboto, Arial, sans-serif;
+    font-size: 1em;
+    background-color: var(--color-back-light);
+}
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 var(--spacer-base);
+   background-color: var(--color-back-dark);
+   height: var(--header-height); 
+}
+header h1 {
+    margin: 0;   
+    font-size: var(--header-font-size);
+    color: white;
+}
+header h1 span {
+    color: var(--color-primary);
+}
+figure {
+    margin: 0;
+    padding: 0;
+}
+button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+.card {
+    background: white;
+    margin-bottom: 2em;	
+    padding: 0;
+    width: 24%;
+    font-size: var(--card-font-size);
+}
+.card-content p {
+    padding: 0.5em 1.4em 0 1.4em;
+    font-size: var(--card-font-size);
+}
+.card-actions {
+    padding: 0.5em 1.4em;
+    font-size: var(--card-font-size);      
+}
+
+/* add your styles here */
+
+.card {
+    width: 20%;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* <--- Added flex-wrap to allow wrapping to multiple rows */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%; /* Added padding for spacing between cards */
+}
+
+.book-cover:hover {
+    filter: saturate(150%);
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card button {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.card:hover button {
+    opacity: 1;
+}
+
+/* styles for mobile portrait screen */
+
+@media screen and (max-width: 480px) {
+    :root {
+        --card-font-size: 100%;
+        --header-font-size: 24px;
+        --header-height: 4em;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+/* styles for tablet portrait and mobile landscape screens */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    :root {
+        --header-height: 5em;
+    }
+    .card {
+        width: 45%;
+    }
+}
