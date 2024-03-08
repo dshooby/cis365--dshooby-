@@ -3,8 +3,8 @@
 const billTotals = [50., 150.00, 20.00, 500.00];
 const tips = [];
 
-for(let total of billTotals){
-    let tip;
+function calculateTip(total) {
+    var tip;
     if(total < 30){
         tip = total * 0.30;
     }
@@ -13,12 +13,13 @@ for(let total of billTotals){
     else {
         tip = total * 0.10;
     }
+    return tip;
+}
 
-    //tip = total < 30 ? total * 0.30 : total * 0.10;
-    tips.push(tip);
-
+for(let total of billTotals){
+    tips.push(calculateTip(total));
 }
 
 for (let i=0; i < billTotals.length; i++) {
-    console.log("For bill of $ " + billTotals[i] + " the tip should be $" + tips[i]);
+    console.log("For bill of $" + billTotals[i] + " the tip should be $" + tips[i]);
 }
