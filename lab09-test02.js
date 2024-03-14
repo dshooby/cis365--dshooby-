@@ -6,10 +6,13 @@ const parent = document.querySelector('#parent');
 for (let ph of photos) {
    let figure = document.createElement('figure');
 
-   //figure.appendChild( createImage(ph) );
+   figure.appendChild( createImage(ph) );
    figure.appendChild( createCaption(ph) );
 
    parent.appendChild(figure);
+
+   parent.appendChild(createButton());
+   console.log("created button");
 }
 
 //create image and set its attributes.
@@ -61,16 +64,16 @@ function createButton(){
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+
    const btn = document.getElementsByTagName("button");
-   console.log(btn);
    btn[0].addEventListener("click", function () {
    console.log("used an anonymous function");
    });
-})
 
-document.querySelector("button").addEventListener("click", function (e)
-{
-   console.log(e.target.textContent);
-   console.log(e);
-   console.log("a different approach but same result")
-})
+   document.querySelector("button").addEventListener("click", function (e)
+      {
+         console.log(e.target.textContent);
+         console.log(e);
+         console.log("a different approach but same result")
+      });
+});
