@@ -21,12 +21,18 @@
    //You will have to add code to set state, use props, and handle changes.
    const App = () => {
 
- 
+      state = {
+         count: 0
+      };
+
+      handleClick = () => {
+         this.setState(prev => ({ count: prev.count + 1}));
+      };
+
       return (
-         <article className="app">
-            <div className="box">
+         <article className="app" onClick={this.handleClick}>
+            <div className="box">{this.state.count}</div>
                <Counter/>
-            </div>
          </article>
       );
          
@@ -72,7 +78,7 @@
    console.log("The weather for Thursday is Partly Sunny");
    console.log("The weather for Friday is Cloudy");
    console.log("The weather for Shabbos is Sunny");
-   
+
 
 </script>        
 </head>
@@ -81,3 +87,4 @@
     
   </body>
 </html>
+
